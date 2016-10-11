@@ -5,13 +5,25 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <svg width="100%" viewBox="0 0 200 100">
+    <svg width="100%" height="500" viewBox="0 0 200 100">
       <ellipse cx="70" cy="50" rx="25" ry="30" fill="white"/>
       <ellipse cx="127" cy="50" rx="25" ry="30" fill="white"/>
-      <circle cx="70" cy="50" r="13">
-<animate attributeName="cx" from="70" to="83"  dur=".50s" begin="click"/> </circle>
-      <circle cx="127" cy="50" r="13">
-
+      <circle cx="58" cy="50" r="13">
+<animate id="circ1" attributeName="cx" from="58" to="82" dur=".50s" begin="0s ; circ2.end"/>
+<animate id="circ2" attributeName="cx" from="82" to="58" dur=".50s" begin="circ1.end"/>
+</circle>
+      <circle cx="115" cy="50" r="13">
+        <animate id="circ3" attributeName="cx" from="115" to="139" dur=".50s" begin="0s ; circ4.end"/>
+        <animate id="circ4" attributeName="cx" from="139" to="115" dur=".50s" begin="circ3.end"/>
+        </circle>
+        <rect x="40" y="13" width="50" height="4">
+          <animate id="rect1" attributeName="y" from="13" to ="5" dur=".30s" begin="0s ; rect2.end"/>
+                    <animate id="rect2" attributeName="y" from="5" to ="13" dur=".30s" begin="0s ; rect1.end"/>
+</rect>
+                    <rect x="105" y="13" width="50" height="4">
+                      <animate id="rect3" attributeName="y" from="13" to ="5" dur=".30s" begin="0s ; rect4.end"/>
+                                <animate id="rect4" attributeName="y" from="5" to ="13" dur=".30s" begin="0s ; rect3.end"/>
+                              </rect>
     </svg>
   </body>
 </html>
